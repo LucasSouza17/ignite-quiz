@@ -37,7 +37,7 @@ export function Home() {
       <Header
         icon={Trophy}
         title="Vamos estudar"
-        subtitle="Treine seus conhecimento"
+        subtitle="Treine seus conhecimentos"
         onPress={() => navigate('history')}
       />
 
@@ -50,8 +50,9 @@ export function Home() {
       <FlatList
         data={quizzes}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => (
+        renderItem={({ item, index }) => (
           <QuizCard
+          index={index}
             data={item}
             onPress={() => navigate('quiz', { id: item.id })}
           />
